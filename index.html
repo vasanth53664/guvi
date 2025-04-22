@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project</title>
+    <link rel="stylesheet" href="p1.css">
+</head>
+<body>
+    <div class="row1">
+        <div class="col1">
+            <ul type="none">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">contact</a></li>
+                <li><a href="#">login</a></li>
+            </ul>
+        </div>
+        <div class="col2">
+            <h1>VK Web</h1>
+        </div>
+</div>
+<div class="big">
+<div class="row2"> 
+    <form >
+<div>
+    <label for="fn" class="a1">first Name:</label>
+    <input type="text" class="ip" id="fn">
+    <div class="error"> </div>
+</div>
+
+<div>
+    <label for="ln" class="a1">Last Name:</label>
+    <input type="text" class="ip" id="ln">
+    <div class="error"> </div>
+</div>
+
+<div>
+    <label for="em" class="a1">Email:</label>
+    <input type="email" class="ip" id="em">
+    <div class="error"> </div>
+</div>
+
+<div>
+    <label for="ar" class="a1">area:</label>
+    <input type="text" class="ip" id="ar">
+    <div class="error"> </div>
+</div>
+
+<div>
+    <label for="nationality" class="a1">Nationality:</label>
+    <input type="radio" value="Indian" name="nationality" class="r" id="pp"> <label for="pp" class="n1" >Indian</label>
+    <input type="radio" value="NRI" name="nationality" class="r" id="ll"> <label for="ll" class="n1" >NRI</label>
+    <div class="error"> </div>
+</div>
+
+<div>
+    <label class="a1">state:</label>
+    <select id="std" class="ip">
+        <option value="">choose</option>
+        <option value="Tamil Nadu">Tamil Nadu</option>
+        <option value="pondicherry">pondicherry</option>
+        <option value="kerala">kerala</option>
+        <option value="Andhra pradesh">Andhra pradesh</option>
+        <option value="karnataka">karnataka</option>
+        <option value="telangana">telangana</option>
+    </select>
+    <div class="error"> </div>
+</div>
+<div class="but">
+    <button type="button" onclick="submitdata()" class="b" class="ip" value="submit">submit</button>
+    <button class="b" class="ip" value="reset">reset</button>
+</div>
+</form>    
+</div>
+</div>
+<script>
+function submitdata() {
+    let name = document.getElementById("fn");
+    console.log(name);
+    console.log(name.value);
+    let finalname = name.value;
+
+    let name1 = document.getElementById("ln");
+    console.log(name1);
+    console.log(name1.value);
+    let finalname1 = name1.value
+
+    let email = document.getElementById("em");
+    console.log(email);
+    console.log(email.value);
+    let finalemail = email.value
+
+
+    let area = document.getElementById("ar");
+    console.log(area);
+    console.log(area.value);
+    let finalarea = area.value
+
+    let nation = document.getElementsByName("nationality")
+    let nat ="";
+    for (let val of nation){
+        if(val.checked){
+            nat = val.value
+        }
+    }
+    console.log(nat);
+    let finalnation = nat;
+
+    let area1 = document.getElementById("std");
+    console.log(area1);
+    console.log(area1.value);
+    let finalarea1 = area1.value;
+
+
+console.log(finalname);
+console.log(finalname1);
+console.log(finalemail);
+console.log(finalarea);
+console.log(finalnation);
+console.log(finalarea1);
+
+if(finalname === ''){
+    setError(name,"First name is empty");
+}
+else{
+    setSucess(name);
+}
+
+if(finalname1 === ''){
+    setError(name1,"Last name is empty");
+}
+else{
+    setSucess(name1);
+}
+
+if(finalemail === ''){
+    setError(email,"email is empty");
+}
+else{
+    setSucess(email);
+}
+
+if(finalarea === ''){
+    setError(area,"area is empty");
+}
+else{
+    setSucess(area);
+}
+
+if(finalnation === ''){
+    setError(nation[0],"nation is empty");
+}
+else{
+    setSucess(nation);
+}
+
+if(finalarea1 === ''){
+    setError(area1,"area is empty");
+}
+else{
+    setSucess(area1);
+}
+
+}
+function setError(element,msg){
+    let parents = element.parentElement;
+    let resfinal = parents.querySelector(".error");
+    resfinal.innerText=msg;
+}
+function setSucess(element){
+    let parents = element.parentElement;
+    let resfinal = parents.querySelector(".error");
+    resfinal.innerText='';
+}
+
+</script>
+</body>
+</html>
