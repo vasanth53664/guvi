@@ -1,6 +1,6 @@
 
 body {
-    background-image: url(/website-background-templates.png);
+    background-image: url("website-background-templates.png");
     background-size: cover;
 }
 
